@@ -25,7 +25,6 @@ def api_predict():
     email = data.get('email')
     tokenized_email = cv.transform([email])
     prediction = clf.predict(tokenized_email)
-    # Convert prediction to int in case it is in array format.
     result = {'prediction': int(prediction[0])}
     return jsonify(result)
 
